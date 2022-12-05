@@ -15,7 +15,7 @@ open("day3_input.txt") do file
     lines = readlines(file)
     count = 0
     count2 = 0
-    for (i,line) in enumerate(lines)
+    for line in lines
         unique_values = unique(line)
         # Part 1
         for uv in unique_values
