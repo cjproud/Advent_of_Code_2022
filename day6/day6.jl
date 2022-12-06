@@ -16,9 +16,6 @@ open("day6_input.txt") do file
     line = readlines(file)[1]
     window = 4
     window2 = 14
-    is_unique = false
-    i = 1
-    
     # Part 1
     println(packet_testing(window, line))
     # Part 2
