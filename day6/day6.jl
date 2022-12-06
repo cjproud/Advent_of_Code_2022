@@ -3,7 +3,7 @@ function packet_testing(window, line)
     i = 1
     while !(is_unique)
         packet = line[i:i+(window-1)]
-        if length(intersect(packet)) == length(packet)
+        if allunique(packet)
             is_unique = true
             return i+window-1
         else
