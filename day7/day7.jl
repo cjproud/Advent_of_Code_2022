@@ -52,7 +52,7 @@ open("day7_input.txt") do file
             v_total += sub_total
         end
 
-        # Part2: Grab total space used
+        # Part2: Grab total space used - sort the dict so we ensure the root directory is first.
         if k == "/"
             total_space_used += sub_total
             space_to_delete = space_needed - (space_available - total_space_used)
