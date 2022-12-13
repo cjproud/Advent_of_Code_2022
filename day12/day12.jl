@@ -7,10 +7,10 @@ open("day12_input.txt") do file
         hill_vector = Int[]
         for char in line
             # Find start
-            if Int(char) - Int('a') == -14
+            if char == 'S'
                 push!(hill_vector, 0)
             # Find end
-            elseif Int(char) - Int('a') == -28
+            elseif char == 'E'
                 push!(hill_vector, 26)
             else
                 push!(hill_vector, Int(char) - Int('a'))
@@ -19,7 +19,6 @@ open("day12_input.txt") do file
         push!(grid, hill_vector)
     end
     grid_matrix = mapreduce(permutedims, vcat, grid)  
-    
     
     # Grab start pos
     starting_positions = findall( x-> x == 0, grid_matrix)
