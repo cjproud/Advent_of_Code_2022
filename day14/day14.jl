@@ -48,7 +48,7 @@ open("day14_input.txt") do file
     end
 
     # Add horizontal space
-    horizontal_padding = 1000
+    horizontal_padding = 200
     cave_matrix = hcat(cave_matrix, zeros(size(cave_matrix)[1], horizontal_padding))
     cave_matrix = hcat(zeros(size(cave_matrix)[1], horizontal_padding), cave_matrix)
     # Concatenate empty space and floow
