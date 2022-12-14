@@ -22,7 +22,7 @@ open("day14_test_input.txt") do file
             push!(rock_vector, (x,y))
         end
 
-        # Create cartesian indicies
+        # Create cartesian indices
         for (i,pos) in enumerate(rock_vector)
             if i < length(rock_vector)
                 # Sort the rock vectors to be increasing
