@@ -64,8 +64,9 @@ open("day14_input.txt") do file
     sand_units = 0
     while sand_units <= 1e5 && sand_not_overflowing
         sand_position = CartesianIndex((1,500-min_x+1))
-        println(sand_units)
         while sand_can_move
+
+            # Check if we're violating bounds
             try
                 # Try move down
                 if cave_matrix[sand_position + CartesianIndex(1, 0)] < 1
@@ -79,6 +80,11 @@ open("day14_input.txt") do file
                 elseif cave_matrix[sand_position] < 1
                     cave_matrix[sand_position] = 2
                     break
+                elseif cave_matrix[sand_position] == 2
+                    println("Full to the brim!", ' ', sand_units)
+                    sand_not_overflowing = false
+                    sand_can_move = false
+                    break
                 end
             catch
                 println("Overflowing", sand_units)
@@ -86,9 +92,6 @@ open("day14_input.txt") do file
                 sand_can_move = false
                 break
             end
-        end
-        if !(sand_not_overflowing)
-            break
         end
         sand_units +=1
     end
